@@ -1,6 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      window.__PUBLIC_PATH__ = window.location.pathname || '/';
+      document.write('<base href="' + window.__PUBLIC_PATH__ + '" />');
+    </script>
     <base href="/" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />

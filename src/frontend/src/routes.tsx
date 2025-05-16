@@ -42,6 +42,12 @@ const DeleteAccountPage = lazy(() => import("./pages/DeleteAccountPage"));
 const PlaygroundPage = lazy(() => import("./pages/Playground"));
 
 const SignUp = lazy(() => import("./pages/SignUpPage"));
+const getBasename = () => {
+  const pathname = window.location.pathname;
+  return window.location.pathname
+    ? window.location.pathname
+    : BASENAME || undefined;
+};
 
 const router = createBrowserRouter(
   createRoutesFromElements([
@@ -188,7 +194,7 @@ const router = createBrowserRouter(
       <Route path="*" element={<CustomNavigate replace to="/" />} />
     </Route>,
   ]),
-  { basename: BASENAME || undefined },
+  { basename: getBasename() }
 );
 
 export default router;
